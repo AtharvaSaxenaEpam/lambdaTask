@@ -1,0 +1,16 @@
+account_id: '890742610830'
+deploy_target_bucket: syndicate-education-platform-custom-sandbox-artifacts-6675/a6bd5a99/task03
+expiration: 2025-03-12 11:03:03.607695+00:00
+extended_prefix_mode: true
+project_path: C:\Users\atharva_saxena\lambdaTaskRepo\lambdaTask
+region: eu-west-1
+resources_prefix: cmtr-a6bd5a99-
+tags:
+  run_id: JAP-11
+  run_type: stm
+  type: user
+  user_id: a6bd5a99
+temp_aws_access_key_id: ASIA46ZDFTOHOMIUC54I
+temp_aws_secret_access_key: Jk7TydQ0/iEPqo5Ez9iGGGwb1oIfDGB1GyEcstZn
+temp_aws_session_token: IQoJb3JpZ2luX2VjEHMaCXVzLWVhc3QtMSJGMEQCIGiUjqRUaIB1Dv/H0UgW0hI/nGM5YEuPP8oobzKCVLQ+AiBMEqa3mB941v92GDwcotAC2iaYIeydiqk07Zk5UN8mHSrgAgi7//////////8BEAAaDDg5MDc0MjYxMDgzMCIMapDLytu0796U40kAKrQCwxsXd8OCbEC/wyqwVXYK9NuZtc/y0AON+60y5XlIpYxPXfwwJCL9d3n1P8CKmpcODG99ZWaKfbLFBnJDTW6ztRwD6S5GLJUt2nkrlD+huN6zg9AJm0IqPEMEovwScB8EhMKJskkIXLJDXoxnWKjVq6rh9/GcJTUQ125Zq/DeQTBigX0cWjczN+2MkIZi70yHaa8GXsGRGHkVmsc7o3wMLRh5XoqFuls+ZgGBVgF8ektAhG7tr+pliPM4sWiPryWUcjc8Pr9aSnhBiI5g1wQ+LX2Gi1T7FSJc24cEX+WSxfIiYOHqKdfujnXEoOISkqrW/Lq8NerjUE40haaTmpQ9+WEx+EmCydSm2bAWrdZHTkl73r09eaps22ZGq+zuE1mY2+9dRgWYmI7eyOKxljI58hiYqrwwobzFvgY6ngFrK+QK/cRSNEP8YOPl/uEvvj5dhNTqPM/AlgB3nVPXLa9ZhqjH2jhcbaHhncw2WWr6LtuxiRr0aZq5tkUz3DdGVJ6bYFpvAXuXFpMAL4COe/OwNIq6wvr5AljaOKlRIjO9MMCBa522gCIy5+/A8KUTH3CmqC2WFulF04kYMab0cR97VkiwDC402sPpWBiz78fqoRzMjDlqxra0e9LRMQ==
+use_temp_creds: false
