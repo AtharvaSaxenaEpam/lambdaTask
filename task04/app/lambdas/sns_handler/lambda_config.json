@@ -13,12 +13,12 @@
     {
       "resource_type": "sns_topic_trigger",
       "target_topic": "lambda_topic",
-      "region": "eu-west-1"
+      "region": "${region}"
     }
   ],
   "env_variables": {},
   "publish_version": true,
-  "alias": "learn",
+  "alias": "${lambdas_alias_name}",
   "url_config": {},
   "ephemeral_storage": 512,
   "tags": {}
