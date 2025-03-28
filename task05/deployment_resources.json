@@ -9,11 +9,6 @@
             "logs:PutLogEvents",
             "dynamodb:GetItem",
             "dynamodb:Query",
-            "dynamodb:GetItem",
-            "dynamodb:Query",
-            "dynamodb:PutItem",
-            "dynamodb:Batch*",
-            "dynamodb:DeleteItem",
             "dynamodb:PutItem",
             "dynamodb:Batch*",
             "dynamodb:DeleteItem",
@@ -30,7 +25,7 @@
     "resource_type": "iam_policy",
     "tags": {}
   },
-  "${target_table}": {
+  "Events": {
     "resource_type": "dynamodb_table",
     "hash_key_name": "id",
     "hash_key_type": "S",
@@ -49,7 +44,6 @@
         "enable_cors": false,
         "POST": {
           "authorization_type": "NONE",
-          "enable_proxy": true,
           "integration_type": "lambda",
           "lambda_name": "api_handler",
           "api_key_required": false,
