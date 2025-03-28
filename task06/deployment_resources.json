@@ -14,10 +14,24 @@
             "dynamodb:DeleteItem",
             "ssm:PutParameter",
             "ssm:GetParameter",
-            "kms:Decrypt"
+            "kms:Decrypt",
+            "dynamodb:GetShardIterator",
+            "dynamodb:DescribeStream",
+            "dynamodb:ListStreams",
+            "dynamodb:GetRecords"
           ],
           "Effect": "Allow",
           "Resource": "*"
+        },
+        {
+          "Action": [
+            "dynamodb:DescribeStream",
+            "dynamodb:GetShardIterator",
+            "dynamodb:GetRecords",
+            "dynamodb:ListStreams"
+          ],
+          "Effect": "Allow",
+          "Resource": "arn:aws:dynamodb:eu-west-1:890742610830:table/cmtr-394aa63c-Configuration/stream/*"
         }
       ],
       "Version": "2012-10-17"
@@ -35,7 +49,7 @@
     "autoscaling": [],
     "tags": {}
   },
-  "Audit": {
+  "${target_table}": {
     "resource_type": "dynamodb_table",
     "hash_key_name": "id",
     "hash_key_type": "S",
