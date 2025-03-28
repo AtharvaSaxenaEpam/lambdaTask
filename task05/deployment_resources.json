@@ -25,7 +25,7 @@
     "resource_type": "iam_policy",
     "tags": {}
   },
-  "Events": {
+  "${target_table}": {
     "resource_type": "dynamodb_table",
     "hash_key_name": "id",
     "hash_key_type": "S",
@@ -51,7 +51,8 @@
           "integration_request_body_template": {},
           "responses": [],
           "integration_responses": [],
-          "default_error_pattern": true
+          "default_error_pattern": true,
+          "enable_proxy": true
         }
       }
     },
