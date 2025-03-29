@@ -21,7 +21,7 @@
             "dynamodb:GetRecords"
           ],
           "Effect": "Allow",
-          "Resource": "*"
+          "Resource": "arn:aws:dynamodb:eu-west-1:890742610830:table/cmtr-394aa63c-Configuration/stream/*"
         }
       ],
       "Version": "2012-10-17"
