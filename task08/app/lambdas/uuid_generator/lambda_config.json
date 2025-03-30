@@ -9,8 +9,15 @@
   "timeout": 100,
   "lambda_path": "lambdas\\uuid_generator",
   "dependencies": [],
-  "event_sources": [],
-  "env_variables": {},
+  "event_sources": [
+    {
+      "target_rule": "uuid_trigger",
+      "resource_type": "cloudwatch_rule_trigger"
+    }
+  ],
+  "env_variables": {
+    "BUCKET_NAME": "${target_bucket}"
+  },
   "publish_version": true,
   "alias": "${lambdas_alias_name}",
   "url_config": {},
