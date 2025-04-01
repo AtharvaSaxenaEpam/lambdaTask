@@ -1,8 +1,8 @@
 const https = require("https");
 
 exports.handler = async (event) => {
-    const path = event.rawPath || event.path;
-    const method = event.requestContext?.http?.method || event.httpMethod;
+    const path = event.rawPath || event.path;  // Fix for undefined path issue
+    const method = event.requestContext?.http?.method || event.httpMethod;  // Fix for undefined method issue
 
     if (path !== "/weather" || method !== "GET") {
         return {
@@ -21,46 +21,24 @@ exports.handler = async (event) => {
     return new Promise((resolve) => {
         https.get(url, (res) => {
             let data = "";
-
             res.on("data", (chunk) => (data += chunk));
-
             res.on("end", () => {
                 try {
-                    if (res.statusCode !== 200) {
-                        return resolve({
-                            statusCode: res.statusCode,
-                            body: JSON.stringify({
-                                message: `Error fetching data from Open-Meteo. Status code: ${res.statusCode}`,
-                                details: data 
-                            })
-                        });
-                    }
-
                     const parsedData = JSON.parse(data);
-
-                    if (!parsedData.hourly || !parsedData.hourly.time || !parsedData.hourly.temperature_2m) {
+                    if (!parsedData.hourly) {
                         return resolve({
                             statusCode: 500,
-                            body: JSON.stringify({
-                                message: "Invalid API response: missing hourly data",
-                                apiResponse: parsedData
-                            })
+                            body: JSON.stringify({ message: "Invalid API response: missing hourly data" })
                         });
                     }
-
                     resolve({ statusCode: 200, body: JSON.stringify(parsedData) });
                 } catch (error) {
-                    resolve({
-                        statusCode: 500,
-                        body: JSON.stringify({ message: "Failed to parse API response", error: error.message })
-                    });
+                    resolve({ statusCode: 500, body: JSON.stringify({ message: "Failed to parse API response" }) });
                 }
             });
-        }).on("error", (err) =>
-            resolve({
-                statusCode: 500,
-                body: JSON.stringify({ message: "Failed to fetch weather data", error: err.message })
-            })
-        );
+        }).on("error", () => resolve({
+            statusCode: 500,
+            body: JSON.stringify({ message: "Failed to fetch weather data" })
+        }));
     });
 };
