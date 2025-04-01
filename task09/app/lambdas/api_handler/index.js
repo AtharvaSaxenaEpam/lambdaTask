@@ -2,7 +2,7 @@ const https = require("https");
 
 exports.handler = async (event) => {
     const path = event.rawPath || event.path;
-    const method = event.requestContext?.http?.method || event.httpMethod; 
+    const method = event.requestContext?.http?.method || event.httpMethod;
 
     if (path !== "/weather" || method !== "GET") {
         return {
